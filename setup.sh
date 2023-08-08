@@ -806,5 +806,10 @@ echo -e "${tyblue}│  Install SCRIPT SELESAI..                  │${NC}"
 echo -e "${tyblue}└────────────────────────────────────────────┘${NC}"
 echo  ""
 sleep 1
-echo -e "${tyblue}REBOOT${NC}"
-shutdown -r now y
+echo -ne "[ ${yell}WARNING${NC} ] Silahkan Reboot Ulang Vps Anda ? (y/n)? "
+read answer
+if [ "$answer" == "${answer#[Yy]}" ] ;then
+exit 0
+else
+reboot
+fi
