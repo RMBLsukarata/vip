@@ -79,7 +79,7 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/casper.sh && chmod +x casper.sh && ./casper.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
 
 }
 res2() {
@@ -87,7 +87,7 @@ wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/slowdns/installsl.s
 
 }
 res3() {
-wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/rmbl1.sh && chmod +x rmbl1.sh && ./rmbl1.sh
 clear
 }
 res4() {
