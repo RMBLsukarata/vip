@@ -303,23 +303,11 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/casper.sh && chmod +x casper.sh && ./casper.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/rmbl.sh && chmod +x rmbl.sh && ./rmnl.sh
 clear
 }
 res2() {
-wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/casper1.sh && chmod +x casper1.sh && ./casper1.sh
-clear
-}
-res3() {
-wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/casper2.sh && chmod +x casper2.sh && ./casper2.sh
-clear
-}
-res4() {
-wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/casper3.sh && chmod +x casper3.sh && ./casper3.sh
-clear
-}
-res5() {
-wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/casper4.sh && chmod +x casper4.sh && ./casper4.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/rmbl.sh && chmod +x rmbl1.sh && ./rmbl.sh
 clear
 }
 clear
@@ -379,13 +367,13 @@ echo -e "${tyblue}│  [ 1 ]  \033[1;37mDomain xxx.yogzvpn.cloud       ${NC}"
 echo -e "${tyblue}│  "                                        
 echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
 until [[ $domain2 =~ ^[1-5]+$ ]]; do 
-read -p "   Please select numbers 1 sampai 5 : " domain2
+read -p "   Please select numbers 1 sampai 2 : " domain2
 done
 fi
 if [[ $domain2 == "1" ]]; then
 clear
 echo -e  "${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e  "${tyblue}│  \033[1;37mContoh subdomain xxx.vpnvip.cloud       ${tyblue}│${NC}"
+echo -e  "${tyblue}│  \033[1;37mContoh subdomain xxx.yogzvpn.cloud       ${tyblue}│${NC}"
 echo -e  "${tyblue}│    \033[1;37mxxx jadi subdomain kamu               ${tyblue}│${NC}"
 echo -e  "${tyblue}└──────────────────────────────────────────┘${NC}"
 echo " "
