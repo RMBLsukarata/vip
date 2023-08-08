@@ -418,7 +418,7 @@ echo -e "$COLOR1║ ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}VLESS    ${WH
 echo -e "$COLOR1║                                                 $COLOR1║ $NC"
 echo -e "$COLOR1║ ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}TROJAN   ${WH}[${COLOR1}Menu${WH}]   ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}SETTING   ${WH}[${COLOR1}Menu${WH}]$COLOR1║ $NC"
 echo -e "$COLOR1║                                                 $COLOR1║ $NC"
-echo -e "$COLOR1║ ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH} RESTART ${WH}[${COLOR1}Menu${WH}]   ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}BACKUP    ${WH}[${COLOR1}Menu${WH}]$COLOR1║ $NC"
+echo -e "$COLOR1║ ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH} ALL-XRAY ${WH}[${COLOR1}Menu${WH}]   ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}BACKUP    ${WH}[${COLOR1}Menu${WH}]$COLOR1║ $NC"
 echo -e "$COLOR1╚═════════════════════════════════════════════════╝${NC}"
 echo -e "$COLOR1┌───────────────── • INFO HARI INI • ─────────────┐${NC}"
 echo -e "$COLOR1│ ${NC}${WH}•  $(cat /etc/status)  •${NC}  $COLOR1 $NC"
@@ -500,7 +500,7 @@ case $opt in
 02 | 2) clear ; m-vmess ;;
 03 | 3) clear ; m-vless ;;
 04 | 4) clear ; m-trojan ;;
-05 | 5) clear ; restart ;;
+05 | 5) clear ; m-allxray ;;
 06 | 6) clear ; running ;;
 07 | 7) clear ; reboot ;;
 08 | 8) clear ; m-update ;;
