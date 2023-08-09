@@ -124,7 +124,7 @@ KEY2=$(curl -sS https://raw.githubusercontent.com/RMBLsukarata/license/main/key 
 ADMIN=$(curl -sS https://raw.githubusercontent.com/RMBLsukarata/license/main/key | grep $kode | awk '{print $5}')
 TOTALIP=$(curl -sS https://raw.githubusercontent.com/RMBLsukarata/license/main/key | grep $kode | awk '{print $6}')
 cd
-if [[ $kode == "CASPERGG" ]]; then
+if [[ $kode == "RMBLGG" ]]; then
 MYIP=$(curl -sS ipv4.icanhazip.com)
 rm -rf /etc/github
 mkdir /etc/github
@@ -140,7 +140,7 @@ mkdir /root/casper
 cd /root/casper
 wget https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini >/dev/null 2>&1
 
-echo "### $author $hhari $MYIP @CASPER" >> ipmini
+echo "### $author $hhari $MYIP @RMBL" >> ipmini
 
 sleep 0.5
 rm -rf .git
@@ -154,7 +154,7 @@ git remote add origin https://github.com/${USERGIT}/permission >/dev/null 2>&1
 git push -f https://${APIGIT}@github.com/${USERGIT}/permission >/dev/null 2>&1
 sleep 0.5
 rm ipmini
-elif [[ $kode == "CASPERVIP" ]]; then
+elif [[ $kode == "RMBLVIP" ]]; then
 MYIP2=$(curl -sS ipv4.icanhazip.com)
 author2=$(cat /etc/profil)
 rm -rf /etc/github
@@ -185,7 +185,7 @@ git remote add origin https://github.com/${USERGIT}/permission >/dev/null 2>&1
 git push -f https://${APIGIT}@github.com/${USERGIT}/permission >/dev/null 2>&1
 sleep 0.5
 rm ipmini
-elif [[ $kode == "CASPERADMIN" ]]; then
+elif [[ $kode == "RMBLADMIN" ]]; then
 MYIP3=$(curl -sS ipv4.icanhazip.com)
 author3=$(cat /etc/profil)
 rm -rf /etc/github
@@ -363,7 +363,7 @@ echo -e "${tyblue}┌───────────────────�
 echo -e "${tyblue}│ \033[1;37mPlease select a your Choice to Set Domain${tyblue}│${NC}"
 echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
 echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "${tyblue}│  [ 1 ]  \033[1;37mDomain xxx.yogzvpn.cloud       ${NC}"
+echo -e "${tyblue}│  [ 1 ]  \033[1;37mDomain xxx.vpnvip.app       ${NC}"
 echo -e "${tyblue}│  "                                        
 echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
 until [[ $domain2 =~ ^[1-5]+$ ]]; do 
