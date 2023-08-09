@@ -2,7 +2,7 @@
 # Proxy For Edukasi & Imclass
 
 # Link Hosting Kalian
-CASPER="raw.githubusercontent.com/RMBLsukarata/vip/main/install"
+RMBL="raw.githubusercontent.com/RMBLsukarata/vip/main/install"
 
 wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/RMBLsukarata/vip/main/sshws/ws-dropbear
 chmod +x /usr/local/bin/ws-dropbear
