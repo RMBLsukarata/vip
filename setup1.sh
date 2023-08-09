@@ -98,7 +98,7 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-wget https://raw.githubusercontent.com/casper9/permission/main/ipmini
+wget https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini
 
 }
 res2() {
@@ -110,7 +110,7 @@ git push -f https://${APIGIT}@github.com/${USERGIT}/permission &> /dev/null
 sleep 1
 }
 res3() {
-wget https://raw.githubusercontent.com/casper9/perv1/main/install/casper.sh && chmod +x casper.sh && ./casper.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/perv1/main/install/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
 clear
 }
 
@@ -155,7 +155,7 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-wget https://raw.githubusercontent.com/casper9/perv1/main/install/casper.sh && chmod +x casper.sh && ./casper.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
 clear
 }
 echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
@@ -172,7 +172,7 @@ echo -e  "${tyblue}┌───────────────────�
 echo -e  "${tyblue}|              TERIMA KASIH                |${NC}"
 echo -e  "${tyblue}|         SUDAH MENGGUNAKAN SCRIPT         |${NC}"
 echo -e  "${tyblue}|                DARI SAYA                 |${NC}"
-#echo -e  "${tyblue}|            BY C A S P E R               |${NC}"
+#echo -e  "${tyblue}|            BY RMBL VPN               |${NC}"
 echo -e  "${tyblue}└──────────────────────────────────────────┘${NC}"
 echo " "
 read -rp "Masukan domain kamu Disini : " -e dnss
@@ -252,7 +252,7 @@ cd
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 clear
-wget https://raw.githubusercontent.com/casper9/perv1/main/tools.sh && chmod +x tools.sh && ./tools.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/tools.sh && chmod +x tools.sh && ./tools.sh
 clear
 start=$(date +%s)
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
@@ -289,37 +289,37 @@ fun_bar() {
 
 
 res2() {
-wget https://raw.githubusercontent.com/casper9/perv1/main/install/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 clear
 } 
 
 res3() {
-wget https://raw.githubusercontent.com/casper9/perv1/main/install/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 clear
 }
 
 res4() {
-wget https://raw.githubusercontent.com/casper9/perv1/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
 }
 
 res5() {
-wget https://raw.githubusercontent.com/casper9/perv1/main/install/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 clear
 }
 
 res6() {
-wget https://raw.githubusercontent.com/casper9/perv1/main/sshws/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/sshws/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 clear
 }
 
 res7() {
-wget https://raw.githubusercontent.com/casper9/perv1/main/menu/update.sh && chmod +x update.sh && ./update.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/menu/update.sh && chmod +x update.sh && ./update.sh
 clear
 }
 
 res8() {
-wget https://raw.githubusercontent.com/casper9/perv1/main/slowdns/installsl.sh && chmod +x installsl.sh && bash installsl.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/slowdns/installsl.sh && chmod +x installsl.sh && bash installsl.sh
 clear
 }
 
@@ -369,8 +369,8 @@ domain=$(cat /etc/xray/domain)
 LocalVersion=$(cat /root/versi)
 IPVPS=$(curl -s ipinfo.io/ip )
 ISPVPS=$( curl -s ipinfo.io/org )
-CHATID="1319592446"
-KEY="6084073663:AAHdbteum38_25MavUHrZb_bt-NbZul9mvE"
+CHATID="5557374381"
+KEY="6445527360:AAHPDE7rdtTVVmcHR8gpWnySDoJ2P8O9pYU"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 ISP=$(cat /etc/xray/isp)
 CITY=$(cat /etc/xray/city)
@@ -429,7 +429,7 @@ if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
 fi
 history -c
-serverV=$( curl -sS https://raw.githubusercontent.com/casper9/perv1/main/versi  )
+serverV=$( curl -sS https://raw.githubusercontent.com/RMBLsukarata/vip/main/versi  )
 echo $serverV > /opt/.ver
 aureb=$(cat /home/re_otm)
 b=11
