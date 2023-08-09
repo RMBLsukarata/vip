@@ -1,7 +1,7 @@
 #!/bin/bash
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IZIN=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini | awk '{print $4}' | grep $MYIP)
 if [ "$MYIP" = "$IZIN" ]; then
   domain
   Casper2
@@ -110,7 +110,7 @@ git push -f https://${APIGIT}@github.com/${USERGIT}/permission &> /dev/null
 sleep 1
 }
 res3() {
-wget https://raw.githubusercontent.com/RMBLsukarata/perv1/main/install/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
 clear
 }
 
@@ -385,7 +385,7 @@ REGION=$(cat $TMPFILE | jq '.region' | sed 's/"//g')
 COUNTRY=$(cat $TMPFILE | jq '.country' | sed 's/"//g')
 author=$(cat /etc/profil)
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IZIN=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | awk '{print 3}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini | awk '{print 3}' | grep $MYIP)
 TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
 
