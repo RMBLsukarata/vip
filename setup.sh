@@ -1,7 +1,7 @@
 #!/bin/bash
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IPVPS=$(curl -sS https://raw.githubusercontent.com/casper9/permission/main/ipmini | grep $MYIP | awk '{print $4}')
+IPVPS=$(curl -sS https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini | grep $MYIP | awk '{print $4}')
 if [[ $MYIP == $IPVPS ]]; then
 domain
 Casper2
