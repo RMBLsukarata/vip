@@ -142,7 +142,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│ \033[1;37mPlease select a your Choice to Set Domain$COLOR1│${NC}"
 echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│  [ 1 ]  \033[1;37mDomain xxx.yogzvpn.cloud       ${NC}"
+echo -e "$COLOR1│  [ 1 ]  \033[1;37mDomain xxx.vpnvip.app       ${NC}"
 echo -e "$COLOR1│  "                                        
 echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
 until [[ $domain2 =~ ^[1-5]+$ ]]; do 
