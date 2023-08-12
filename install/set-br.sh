@@ -9,10 +9,10 @@ make install
 cd
 rm -rf wondershaper
 cd /usr/bin
-wget -O backup "https://raw.githubusercontent.com/casper9/perv1/main/menu/backup.sh"
-wget -O restore "https://raw.githubusercontent.com/casper9/perv1/main/menu/restore.sh"
-wget -O cleaner "https://raw.githubusercontent.com/casper9/perv1/main/install/cleaner.sh"
-wget -O xp "https://raw.githubusercontent.com/casper9/perv1/main/install/xp.sh"
+wget -O backup "https://raw.githubusercontent.com/RMBLsukarata/vip/main/menu/backup.sh"
+wget -O restore "https://raw.githubusercontent.com/casper9/vip/main/menu/restore.sh"
+wget -O cleaner "https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/cleaner.sh"
+wget -O xp "https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/xp.sh"
 chmod +x /usr/bin/backup
 chmod +x /usr/bin/restore
 chmod +x /usr/bin/cleaner
@@ -51,7 +51,7 @@ service cron restart > /dev/null 2>&1
 
 # > Pasang Limit
 
-wget "https://raw.githubusercontent.com/casper9/perv1/main/bin/limit.sh" >/dev/null 2>&1
+wget "https://raw.githubusercontent.com/RMBLsukarata/vip/main/bin/limit.sh" >/dev/null 2>&1
 
 chmod +x limit.sh && bash limit.sh >/dev/null 2>&1
     
