@@ -1832,7 +1832,7 @@ read -p "   Please select numbers 1-3 or Any Button(BACK) : " dobot
 done
 if [[ $dobot == "1" ]]; then
 clear
-wget https://raw.githubusercontent.com/RMBLsukarata/dobot/main/install.sh &> /dev/null
+wget https://raw.githubusercontent.com/Hunterscrip/dobot/main/install.sh &> /dev/null
 chmod +x install.sh
 bash install.sh
 rm -rf install.sh
