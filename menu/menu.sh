@@ -410,7 +410,7 @@ echo -e "$COLOR1╔════════════════════�
 echo -e "$COLOR1║${NC} ${COLBG1}                  ${WH}• LIST MENU •                ${NC}$COLOR1 ║ $NC"
 echo -e "$COLOR1╚═════════════════════════════════════════════════╝${NC}"
 echo -e "$COLOR1╔═════════════════════════════════════════════════╗${NC}"
-echo -e "$COLOR1║ ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}SSH-WS   ${WH}[${COLOR1}Menu${WH}]   ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}STATUS SERVICE  $COLOR1║ $NC"
+echo -e "$COLOR1║ ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}SSH-WS   ${WH}[${COLOR1}Menu${WH}]   ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}RESTART SERVICE  $COLOR1║ $NC"
 echo -e "$COLOR1║                                                 $COLOR1║ $NC"
 echo -e "$COLOR1║ ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}VMESS    ${WH}[${COLOR1}Menu${WH}]   ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}REBOOT VPS      $COLOR1║ $NC"
 echo -e "$COLOR1║                                                 $COLOR1║ $NC"
@@ -501,7 +501,7 @@ case $opt in
 03 | 3) clear ; m-vless ;;
 04 | 4) clear ; m-trojan ;;
 05 | 5) clear ; m-allxray ;;
-06 | 6) clear ; running ;;
+06 | 6) clear ; restart ;;
 07 | 7) clear ; reboot ;;
 08 | 8) clear ; m-update ;;
 19 | 9) clear ; m-system ;;
