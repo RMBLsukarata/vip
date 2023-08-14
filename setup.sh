@@ -171,7 +171,7 @@ mkdir /root/casper
 cd /root/casper
 wget https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini >/dev/null 2>&1
 
-sed -i "/# VIP/a ### ${author2} ${hhari2} ${MYIP2} ON 999 VIP" /root/casper/ipmini
+sed -i "/# VIP/a ### ${author2} ${hhari2} ${MYIP2} ON 999 VIP" /root/rmbl/ipmini
 
 sleep 0.5
 rm -rf .git
@@ -202,7 +202,7 @@ mkdir /root/casper
 cd /root/casper
 wget https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini >/dev/null 2>&1
 
-sed -i "/# RESELLER/a ### ${author3} ${hhari3} ${MYIP3} ON 999" /root/casper/ipmini
+sed -i "/# RESELLER/a ### ${author3} ${hhari3} ${MYIP3} ON 999" /root/rmbl/ipmini
 
 sleep 0.5
 rm -rf .git
@@ -232,7 +232,7 @@ mkdir /root/casper
 cd /root/casper
 wget https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini >/dev/null 2>&1
 if [ "$ADMIN" = "ON" ]; then
-sed -i "/# RESELLER/a ### ${author} ${hhari} ${MYIP} ${ADMIN} ${TOTALIP}" /root/casper/ipmini
+sed -i "/# RESELLER/a ### ${author} ${hhari} ${MYIP} ${ADMIN} ${TOTALIP}" /root/rmbl/ipmini
 else
 echo "### $author $hhari $MYIP @$LIST" >> ipmini
 fi
@@ -251,9 +251,9 @@ sleep 0.5
 rm ipmini
 wget https://raw.githubusercontent.com/RMBLsukarata/license/main/key >/dev/null 2>&1
 if [ "$ADMIN" = "ON" ]; then
-sed -i "/^### $LIST $Key $KEY2 $ADMIN $TOTALIP/d" /root/casper/key
+sed -i "/^### $LIST $Key $KEY2 $ADMIN $TOTALIP/d" /root/rmbl/key
 else
-sed -i "/^### $LIST $Key $KEY2/d" /root/casper/key
+sed -i "/^### $LIST $Key $KEY2/d" /root/rmbl/key
 fi
 sleep 0.5
 rm -rf .git
@@ -364,9 +364,10 @@ echo -e "${tyblue}│ \033[1;37mPlease select a your Choice to Set Domain${tyblu
 echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
 echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
 echo -e "${tyblue}│  [ 1 ]  \033[1;37mDomain xxx.vpnvip.app       ${NC}"
+echo -e "${tyblue}│  [ 2 ]  \033[1;37mDomain xxx.yogzvpn.cloud       ${NC}"
 echo -e "${tyblue}│  "                                        
 echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
-until [[ $domain2 =~ ^[1-5]+$ ]]; do 
+until [[ $domain2 =~ ^[1-2]+$ ]]; do 
 read -p "   Please select numbers 1 sampai 2 : " domain2
 done
 fi
@@ -659,7 +660,7 @@ clear
 }
 
 echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "${tyblue}│      PROCESS INSTALLED SSH     │${NC}"
+echo -e "${tyblue}│      PROCESS INSTALLED SSH  VPN           │${NC}"
 echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
 fun_bar 'res2'
 
