@@ -75,7 +75,7 @@ U5=$(curl -sS https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipm
 U6=$(curl -sS https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini | grep $MYIP | awk '{print $6}')
 MYIP=$(curl -sS ipv4.icanhazip.com)
 
-if [[ $kode == "CASPERGG" ]]; then
+if [[ $kode == "RMBLGG" ]]; then
 MYIP=$(curl -sS ipv4.icanhazip.com)
 rm -rf /etc/github
 mkdir /etc/github
@@ -97,7 +97,7 @@ else
 if [ "$U4" = "$MYIP" ]; then
 sed -i "s/### $U2 $U3 $U4 $U5/### $U2 $hhari $U4 $U5/g" /root/casper/ipmini
 else
-echo "### $author $hhari $MYIP @CASPER" >> ipmini
+echo "### $author $hhari $MYIP @RMBL" >> ipmini
 fi
 fi
 sleep 0.5
@@ -151,7 +151,7 @@ wget https://raw.githubusercontent.com/RMBLsukarata/license/main/key >/dev/null 
 if [ "$ADMIN" = "ON" ]; then
 sed -i "/^### $LIST $Key $KEY2 $ADMIN $TOTALIP/d" /root/casper/key
 else
-sed -i "/^### $LIST $Key $KEY2/d" /root/casper/key
+sed -i "/^### $LIST $Key $KEY2/d" /root/rmbl/key
 fi
 sleep 0.5
 rm -rf .git
