@@ -1,10 +1,5 @@
 #!/bin/bash
 clear
-# GETTING DOMAIN NAME
-Domen="$(cat /etc/xray/domain)"
-
-function restartservice(){    
-clear
 fun_bar() {
     CMD[0]="$1"
     CMD[1]="$2"
@@ -32,22 +27,50 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-    systemctl restart nginx
-    systemctl restart xray
-    systemctl restart daemon
-    systemctl restart udp-custom
-    systemctl restart client
-    systemctl restart server
-    systemctl restart ws-dropbear
-    systemctl restart ws-stunnel
-    systemctl restart openvpn
-    systemctl restart cron
-    systemctl restart netfilter-persistent
-    systemctl restart squid
-    systemctl restart badvpn1
-    systemctl restart badvpn2
-    systemctl restart badvpn3
+    systemctl daemon-reload
 }
+res2() {
+    systemctl reload nginx
+}
+res3() {
+    systemctl reload xray
+}
+res4() {
+    systemctl reload rc-local
+}
+res5() {
+    systemctl reload client
+}
+res6() {
+    systemctl reload server
+}
+res7() {
+    systemctl reload dropbear
+}
+res8() {
+    systemctl reload ws
+}
+res9() {
+    systemctl reload openvpn
+}
+res10() {
+    systemctl reload cron
+}
+res11() {
+    systemctl reload haproxy
+}
+res12() {
+    systemctl reload netfilter-persistent
+}
+res13() {
+    systemctl reload squid
+}
+res14() {
+    systemctl reload badvpn1
+    systemctl reload badvpn2
+    systemctl reload badvpn3
+}
+netfilter-persistent
 clear
 echo -e "$COLOR1 ┌──────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}          ${WH}RESTART SERVICE VPS             ${NC} $COLOR1 $NC"
