@@ -358,18 +358,7 @@ res1() {
     systemctl restart badvpn1
     systemctl restart badvpn2
     systemctl restart badvpn3
-}
-clear
-echo -e "$COLOR1 ┌──────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC} ${COLBG1}          ${WH}RESTART SERVICE VPS             ${NC} $COLOR1 $NC"
-echo -e "$COLOR1 └──────────────────────────────────────────┘${NC}"
-echo -e ""
-echo -e "  \033[1;91m Restart All Service... \033[1;37m"
-fun_bar 'res1'
 
-echo -e ""
-read -n 1 -s -r -p "Press [ Enter ] to back on menu"
-menu
 }
 echo -e ""
 echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
@@ -426,7 +415,8 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC}                ${WH}♧ SCRIPT ♧ ${NC}                    $COLOR1 $NC"
 echo -e "$COLOR1 ${NC}                ${WH}♤ PREMIUM ♤ ${NC}                   $COLOR1 $NC"
 #echo -e "$COLOR1 ${NC}                ${WH}◇   BY   ◇ ${NC}                    $COLOR1 $NC"
-#echo -e "$COLOR1 ${NC}             ${WH}♡ C A S P E R ♡ ${NC}                 $COLOR1 $NC"
+#echo -e "$COLOR1 ${NC}             ${WH}♡ RMBL VPN ♡ ${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
-read -n 1 -s -r -p "Press any key to Restart Service or Ctrl + C to Exit"
-restart
+echo -e ""
+read -n 1 -s -r -p "Press [ Enter ] to back on menu"
+menu
