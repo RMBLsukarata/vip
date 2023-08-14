@@ -1,4 +1,112 @@
-#!/bin/bash
+else
+   status_beruangjatuh="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+# STATUS SERVICE STUNNEL
+if [[ $stunnel_service == "running" ]]; then
+   status_stunnel=" ${GREEN}Running ${NC}( No Error )"
+else
+   status_stunnel="${RED}  Not Running ${NC}  ( Error )}"
+fi
+# STATUS SERVICE WEBSOCKET TLS
+if [[ $wstls == "running" ]]; then
+   swstls=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   swstls="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+# STATUS SERVICE WEBSOCKET DROPBEAR
+#if [[ $wsdrop == "running" ]]; then
+ #  swsdrop=" ${GREEN}Running ${NC}( No Error )${NC}"
+#else
+#   swsdrop="${RED}  Not Running ${NC}  ( Error )${NC}"
+#fi
+
+# STATUS SERVICE SSLH / SSH
+if [[ $osslh == "running" ]]; then 
+   sosslh=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   sosslh="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+# STATUS OHP DROPBEAR
+if [[ $udp == "running" ]]; then 
+   udp=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   udp="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+# STATUS OHP OpenVPN
+if [[ $sls == "running" ]]; then 
+   sls=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   sls="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+# STATUS OHP SSH
+if [[ $slc == "running" ]]; then 
+   slc=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   slc="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+# STATUS SHADOWSOCKS
+if [[ $shadowsocks == "running" ]]; then
+   status_shadowsocks=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   status_shadowsocks="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+
+
+# TOTAL RAM
+total_ram=`grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
+totalram=$(($total_ram/1024))
+
+# TIPE PROCESSOR
+#totalcore="$(grep -c "^processor" /proc/cpuinfo)"
+#totalcore+=" Core"
+#corediilik="$(grep -c "^processor" /proc/cpuinfo)"
+#tipeprosesor="$(awk -F ': | @' '/model name|Processor|^cpu model|chip type|^cpu type/ {
+  #                      printf $2;
+      #                  exit
+    #                    }' /proc/cpuinfo)"
+
+# GETTING CPU INFORMATION
+#cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
+#cpu_usage="$((${cpu_usage1/\.*} / ${corediilik:-1}))"
+#cpu_usage+=" %"
+
+# OS UPTIME
+#uptime="$(uptime -p | cut -d " " -f 2-10)"
+
+# KERNEL TERBARU
+kernelku=$(uname -r)
+
+# WAKTU SEKARANG
+DATE=$(date +'%Y-%m-%d')
+datediff() {
+    d1=$(date -d "$1" +%s)
+    d2=$(date -d "$2" +%s)
+    echo -e "$COLOR1 $NC Expiry In   : $(( (d1 - d2) / 86400 )) Days"
+}
+mai="datediff "$Exp" "$DATE""
+
+today=`date -d "0 days" +"%Y-%m-%d"`
+Exp2=$(curl -sS https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini | grep $MYIP | awk '{print $3}')
+
+# CERTIFICATE STATUS
+d1=$(date -d "$Exp2" +%s)
+d2=$(date -d "$today" +%s)
+certificate=$(( (d1 - d2) / 86400 ))
+
+# DNS PATCH
+#tipeos2=$(uname -m)
+Name2=$(curl -sS https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+# GETTING DOMAIN NAME
+Domen="$(cat /etc/xray/domain)"
+
+function restartservice(){    
 clear
 fun_bar() {
     CMD[0]="$1"
@@ -27,50 +135,22 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-    systemctl daemon-reload
+    systemctl restart nginx
+    systemctl restart xray
+    systemctl restart daemon
+    systemctl restart udp-custom
+    systemctl restart client
+    systemctl restart server
+    systemctl restart ws-dropbear
+    systemctl restart ws-stunnel
+    systemctl restart openvpn
+    systemctl restart cron
+    systemctl restart netfilter-persistent
+    systemctl restart squid
+    systemctl restart badvpn1
+    systemctl restart badvpn2
+    systemctl restart badvpn3
 }
-res2() {
-    systemctl reload nginx
-}
-res3() {
-    systemctl reload xray
-}
-res4() {
-    systemctl reload rc-local
-}
-res5() {
-    systemctl reload client
-}
-res6() {
-    systemctl reload server
-}
-res7() {
-    systemctl reload dropbear
-}
-res8() {
-    systemctl reload ws
-}
-res9() {
-    systemctl reload openvpn
-}
-res10() {
-    systemctl reload cron
-}
-res11() {
-    systemctl reload haproxy
-}
-res12() {
-    systemctl reload netfilter-persistent
-}
-res13() {
-    systemctl reload squid
-}
-res14() {
-    systemctl reload badvpn1
-    systemctl reload badvpn2
-    systemctl reload badvpn3
-}
-netfilter-persistent
 clear
 echo -e "$COLOR1 ┌──────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}          ${WH}RESTART SERVICE VPS             ${NC} $COLOR1 $NC"
@@ -79,66 +159,5 @@ echo -e ""
 echo -e "  \033[1;91m Restart All Service... \033[1;37m"
 fun_bar 'res1'
 
-echo -e ""
-read -n 1 -s -r -p "Press [ Enter ] to back on menu"
-menu
-}
-echo -e ""
-echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}⇱ SYSTEM INFORMATION ⇲${NC}                       $COLOR1 $NC"
-echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
-#echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
-echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 Hostname    ${COLOR1}: ${WH}$HOSTNAME$NC"
-echo -e "$COLOR1 $NC  ${WH}🔱 OS Name     ${COLOR1}: ${WH}$Tipe$NC"
-echo -e "$COLOR1 $NC  ${WH}🔱 Total RAM   ${COLOR1}: ${WH}${totalram}MB$NC"
-echo -e "$COLOR1 $NC  ${WH}🔱 Public IP   ${COLOR1}: ${WH}$MYIP$NC"
-echo -e "$COLOR1 $NC  ${WH}🔱 Domain      ${COLOR1}: ${WH}$Domen$NC"
-echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
-#echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
-echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}⇱ SUBSCRIPTION INFORMATION ⇲${NC}                $COLOR1 $NC"
-echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
-#echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
-echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 Client Name ${COLOR1}: ${WH}$Name2${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 License     ${COLOR1}: ${WH}$certificate days${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 Version     ${COLOR1}: ${WH}$(cat /opt/.ver) Latest Version${NC}"
-echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
-#echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
-echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}⇱ SERVICE INFORMATION ⇲${NC}                 $COLOR1 $NC"
-echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
-#echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
-echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 SSH / TUN               ${COLOR1}: ${WH}$status_ssh${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 OpenVPN                 ${COLOR1}: ${WH}$status_openvpn${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 Dropbear                ${COLOR1}: ${WH}$status_beruangjatuh${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 Stunnel4                ${COLOR1}: ${WH}$status_stunnel${NC}"
-#echo -e "🔱 Squid                   :$status_squid"
-#echo -e "$COLOR1 $NC  ${WH}🔱 Fail2Ban                ${COLOR1}: ${WH}$status_fail2ban${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 Crons                   ${COLOR1}: ${WH}$status_cron${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 Vnstat                  ${COLOR1}: ${WH}$status_vnstat${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 XRAYS Vmess TLS         ${COLOR1}: ${WH}$status_tls_v2ray${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 XRAYS Vmess None TLS    ${COLOR1}: ${WH}$status_nontls_v2ray${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 XRAYS Vless TLS         ${COLOR1}: ${WH}$status_tls_vless${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 XRAYS Vless None TLS    ${COLOR1}: ${WH}$status_nontls_vless${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 XRAYS Trojan            ${COLOR1}: ${WH}$status_virus_trojan${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 Shadowsocks             ${COLOR1}: ${WH}$status_shadowsocks${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 Websocket TLS           ${COLOR1}: ${WH}$swstls${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 Websocket None TLS      ${COLOR1}: ${WH}$swstls${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 Websocket None TLS      ${COLOR1}: ${WH}$swstls${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 SSH UDP COSTUM          ${COLOR1}: ${WH}$udp${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 SlowDNS CLIENT          ${COLOR1}: ${WH}$slc${NC}"
-echo -e "$COLOR1 $NC  ${WH}🔱 SlowDNS SERVER          ${COLOR1}: ${WH}$sls${NC}"
-#echo -e "🔱 SSL / SSH Multiplexer   :$sosslh"
-echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
-#echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
-echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}♧ SCRIPT ♧ ${NC}                    $COLOR1 $NC"
-echo -e "$COLOR1 ${NC}                ${WH}♤ PREMIUM ♤ ${NC}                   $COLOR1 $NC"
-#echo -e "$COLOR1 ${NC}                ${WH}◇   BY   ◇ ${NC}                    $COLOR1 $NC"
-#echo -e "$COLOR1 ${NC}             ${WH}♡ C A S P E R ♡ ${NC}                 $COLOR1 $NC"
-echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 read -n 1 -s -r -p "Press any key to Restart Service or Ctrl + C to Exit"
 restart
