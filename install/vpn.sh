@@ -1,7 +1,7 @@
 #!/bin/bash
 # Mod By RMBL VPN 
 
-# By C A S P E R
+# By RMBL VPN 
 # ==================================================
 # Link Hosting Kalian
 RMBL="raw.githubusercontent.com/RMBLsukarata/vip/main/install/"
