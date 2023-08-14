@@ -374,7 +374,7 @@ fi
 if [[ $domain2 == "1" ]]; then
 clear
 echo -e  "${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e  "${tyblue}│  \033[1;37mContoh subdomain xxx.yogzvpn.cloud       ${tyblue}│${NC}"
+echo -e  "${tyblue}│  \033[1;37mContoh subdomain xxx.vpnvip.app       ${tyblue}│${NC}"
 echo -e  "${tyblue}│    \033[1;37mxxx jadi subdomain kamu               ${tyblue}│${NC}"
 echo -e  "${tyblue}└──────────────────────────────────────────┘${NC}"
 echo " "
@@ -404,7 +404,7 @@ rm /root/subdomainx
 elif [[ $domain2 == "2" ]]; then
 clear
 echo -e  "${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e  "${tyblue}│  \033[1;37mContoh subdomain xxx.vpnvip.app         ${tyblue}│${NC}"
+echo -e  "${tyblue}│  \033[1;37mContoh subdomain xxx.yogzvpn.cloud         ${tyblue}│${NC}"
 echo -e  "${tyblue}│    \033[1;37mxxx jadi subdomain kamu               ${tyblue}│${NC}"
 echo -e  "${tyblue}└──────────────────────────────────────────┘${NC}"
 echo " "
