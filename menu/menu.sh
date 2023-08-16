@@ -393,7 +393,7 @@ echo -e "$COLOR1╔════════════════════�
 echo -e "$COLOR1║ ${COLOR1}  ${NC}      ${COLOR1}Today      Yesterday        Month       ${NC}"
 #echo -e "$COLOR1╚═════════════════════════════════════════════════╝${NC}"
 #echo -e "$COLOR1╔═════════════════════════════════════════════════╗${NC}"
-echo -e "$COLOR1║ ${COLOR1}  ${NC}    ${COLOR1}  $todayd $today_v    $yesterday $yesterday_v     $month $month_v$COLOR1  ${NC} "
+echo -e "$COLOR1║ ${COLOR1}${NC}    ${COLOR1}  $todayd $today_v    $yesterday $yesterday_v     $month $month_v$COLOR1  ${NC} "
 echo -e "$COLOR1╚═════════════════════════════════════════════════╝${NC}"
 echo -e "$COLOR1╔════════════════ • STATUS SERVER • ══════════════╗${NC}"
 echo -e "$COLOR1║$NC ${WH}[ SSH WS : ${status_ws} ${WH}]  ${WH}[ XRAY : ${status_xray} ${WH}]   ${WH}[ NGINX : ${status_nginx} ${WH}] $COLOR1│$NC"
