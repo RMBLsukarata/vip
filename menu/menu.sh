@@ -414,7 +414,7 @@ echo -e "$COLOR1║ ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}VLESS    ${WH
 echo -e "$COLOR1║                                                 $COLOR1║ $NC"
 echo -e "$COLOR1║ ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}TROJAN   ${WH}[${COLOR1}Menu${WH}]   ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}SETTING   ${WH}[${COLOR1}Menu${WH}]$COLOR1║ $NC"
 echo -e "$COLOR1║                                                 $COLOR1║ $NC"
-echo -e "$COLOR1║ ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}TRIAL   ${WH}[${COLOR1}Menu${WH}]   ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}BACKUP    ${WH}[${COLOR1}Menu${WH}]$COLOR1║ $NC"
+echo -e "$COLOR1║ ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}TRIAL   ${WH}[${COLOR1}Menu${WH}]    ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}BACKUP    ${WH}[${COLOR1}Menu${WH}]$COLOR1║ $NC"
 echo -e "$COLOR1╚═════════════════════════════════════════════════╝${NC}"
 echo -e "$COLOR1╔═════════════════ • INFO HARI INI • ═════════════╗${NC}"
 echo -e "$COLOR1║ ${NC}${WH}•  $(cat /etc/status)  •${NC}  $COLOR1 $NC"
