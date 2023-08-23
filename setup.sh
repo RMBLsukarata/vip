@@ -720,7 +720,7 @@ EXP=$(( (d1 - d2) / 86400 ))
 
 TEXT="
 <code>◇━━━━━━━━━━━━━━◇</code>
-<code>🟢AUTOSCRIPT PREMIUM🟢</code>
+<code>🟢AUTOSCRIPT RMBL VPN🟢</code>
 <code>◇━━━━━━━━━━━━━━◇</code>
 <code>NAME : </code><code>${author}</code>
 <code>TIME : </code><code>${TIME} WIB</code>
@@ -760,7 +760,7 @@ if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
 fi
 history -c
-serverV=$( curl -sS https://raw.githubusercontent.com/casper9/perv1/main/versi  )
+serverV=$( curl -sS https://raw.githubusercontent.com/RMBLsukarata/vip/main/versi  )
 echo $serverV > /opt/.ver
 aureb=$(cat /home/re_otm)
 b=11
