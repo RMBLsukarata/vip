@@ -366,14 +366,14 @@ echo -e "${tyblue}┌───────────────────�
 echo -e "${tyblue}│  [ 1 ]  \033[1;37mDomain xxx.vpnvip.app       ${NC}"
 echo -e "${tyblue}│  "                                        
 echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
-until [[ $domain2 =~ ^[1-5]+$ ]]; do 
-read -p "   Please select numbers 1 sampai 2 : " domain2
+until [[ $domain2 =~ ^[1-2]+$ ]]; do 
+read -p "   Please select numbers 1 sampai 1 : " domain2
 done
 fi
 if [[ $domain2 == "1" ]]; then
 clear
 echo -e  "${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e  "${tyblue}│  \033[1;37mContoh subdomain xxx.yogzvpn.cloud       ${tyblue}│${NC}"
+echo -e  "${tyblue}│  \033[1;37mContoh subdomain xxx.vpnvip.app       ${tyblue}│${NC}"
 echo -e  "${tyblue}│    \033[1;37mxxx jadi subdomain kamu               ${tyblue}│${NC}"
 echo -e  "${tyblue}└──────────────────────────────────────────┘${NC}"
 echo " "
@@ -659,7 +659,7 @@ clear
 }
 
 echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "${tyblue}│      PROCESS INSTALLED SSH     │${NC}"
+echo -e "${tyblue}│      PROCESS INSTALLED SSH  VPN          │${NC}"
 echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
 fun_bar 'res2'
 
