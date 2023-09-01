@@ -102,14 +102,14 @@ fi
 if [ -z ${iplim} ]; then
   iplim="0"
 fi
-#if [ -z ${Quota} ]; then
-#  Quota="0"
-#fi
-#c=$(echo "${Quota}" | sed 's/[^0-9]*//g')
-#d=$((${c} * 1024 * 1024 * 1024))
-#if [[ ${c} != "0" ]]; then
-#  echo "${d}" >/etc/vmess/${user}
-#  fi
+if [ -z ${Quota} ]; then
+  Quota="0"
+fi
+c=$(echo "${Quota}" | sed 's/[^0-9]*//g')
+d=$((${c} * 1024 * 1024 * 1024))
+if [[ ${c} != "0" ]]; then
+  echo "${d}" >/etc/vmess/${user}
+  fi
 echo "${iplim}" >/etc/vmess/${user}IP
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\#vm '"$user $exp"'\
