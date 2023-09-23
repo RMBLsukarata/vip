@@ -30,7 +30,7 @@ YELL='\033[0;33m'
  clear
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/RMBL-ZERO/permission/main/ipmini > /root/tmp
+    curl -sS https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -48,7 +48,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/RMBL-ZERO/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -65,7 +65,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/RMBL-ZERO/permission/main/ipmini | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -83,7 +83,7 @@ PERMISSION
 if [ "$res" = "Expired" ]; then
 Exp="\e[36mExpired\033[0m"
 else
-Exp=$(curl -sS https://raw.githubusercontent.com/RMBL-ZERO/permission/main/ipmini | grep $MYIP | awk '{print $3}')
+Exp=$(curl -sS https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini | grep $MYIP | awk '{print $3}')
 fi
 
 BIBlack='\033[1;90m'      # Black
@@ -202,7 +202,7 @@ USAGERAM=$(free -m | awk 'NR==2 {print $3}')
 Info="(${c2}Active${NC})"
 Error="(${red}Expired${NC})"
 today=`date -d "0 days" +"%Y-%m-%d"`
-Exp1=$(curl https://raw.githubusercontent.com/RMBL-ZERO/permission/main/ipmini | grep $MYIP | awk '{print $4}')
+Exp1=$(curl https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini | grep $MYIP | awk '{print $4}')
 if [[ $today < $Exp1 ]]; then
 sts="${Info}"
 else
@@ -320,7 +320,7 @@ echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
-export sem=$( curl -s https://raw.githubusercontent.com/RMBL-ZERO/permission/main/versi)
+export sem=$( curl -s https://raw.githubusercontent.com/RMBLsukarata/permission/main/versi)
 export pak=$( cat /home/.ver)
 IPVPS=$(curl -s ipinfo.io/ip )
 #################
@@ -391,7 +391,7 @@ total_ssh=$(grep -c -E "^### " "/etc/xray/ssh")
 
 clear
 echo -e " ${z}╔══════════════════════════════════════════════════════════╗${NC}" | lolcat
-echo -e " ${z}║$NC\033[41m                  • RMBL VPN TUNNEL •                     $NC${z}║$NC"
+echo -e " ${z}║$NC\033[41m                  • RMBL VPN TUNNELING •                  $NC${z}║$NC"
 echo -e " ${z}╚══════════════════════════════════════════════════════════╝${NC}" | lolcat
 echo -e " ${z}╔══════════════════════════════════════════════════════════╗${NC}" | lolcat
 echo -e " ${z}║ $NC$r 🪯  $NC${z} SYSTEM OS     $blue=$NC $MODEL${NC}" | lolcat
@@ -436,7 +436,7 @@ datediff() {
 }
 mai="datediff "$Exp" "$DATE""
 echo -e " ${z}╔══════════════════════════════════════════════════════════╗${NC}" | lolcat
-echo -e " ${z}║${NC}${z}   Version   $blue 🪯 ${NC} 1.1  Version ${NC}" | lolcat
+echo -e " ${z}║${NC}${z}   Version   $blue 🪯 ${NC} 1.2  Version ${NC}" | lolcat
 echo -e " ${z}║${NC}${z}   User      $blue 🪯 ${NC}\033[1;36m $Name \e[0m"
 if [ $exp \< 1000 ];
 then
