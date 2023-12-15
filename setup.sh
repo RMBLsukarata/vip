@@ -1,7 +1,7 @@
 #!/bin/bash
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IPVPS=$(curl -sS https://raw.githubusercontent.com/RMBL-VPN/permission/main/ipmini | grep $MYIP | awk '{print $4}')
+IPVPS=$(curl -sS https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini | grep $MYIP | awk '{print $4}')
 if [[ $MYIP == $IPVPS ]]; then
 domain
 Casper2
@@ -87,9 +87,9 @@ APIGIT=$(cat /etc/github/api)
 EMAILGIT=$(cat /etc/github/email)
 USERGIT=$(cat /etc/github/username)
 hhari=$(date -d "1 days" +"%Y-%m-%d")
-mkdir /root/casper
-cd /root/casper
-wget https://raw.githubusercontent.com/RMBL-VPN/permission/main/ipmini >/dev/null 2>&1
+mkdir /root/rmbl
+cd /root/rmbl
+wget https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini >/dev/null 2>&1
 echo "### $author $hhari $MYIP @trial" >> ipmini
 sleep 1
 rm -rf .git
@@ -102,7 +102,7 @@ git branch -M main >/dev/null 2>&1
 git remote add origin https://github.com/${USERGIT}/permission >/dev/null 2>&1
 git push -f https://${APIGIT}@github.com/${USERGIT}/permission >/dev/null 2>&1
 sleep 1
-rm -rf /root/casper
+rm -rf /root/rmbl
 rm -rf /etc/github
 clear
 fi
@@ -138,7 +138,7 @@ USERGIT=$(cat /etc/github/username)
 hhari=$(date -d "30 days" +"%Y-%m-%d")
 mkdir /root/rmbl
 cd /root/rmbl
-wget https://raw.githubusercontent.com/RMBL-VPN/permission/main/ipmini >/dev/null 2>&1
+wget https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini >/dev/null 2>&1
 
 echo "### $author $hhari $MYIP @RMBL" >> ipmini
 
@@ -169,7 +169,7 @@ USERGIT=$(cat /etc/github/username)
 hhari2=$(date -d "999 days" +"%Y-%m-%d")
 mkdir /root/rmbl
 cd /root/rmbl
-wget https://raw.githubusercontent.com/RMBL-VPN/permission/main/ipmini >/dev/null 2>&1
+wget https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini >/dev/null 2>&1
 
 sed -i "/# VIP/a ### ${author2} ${hhari2} ${MYIP2} ON 999 VIP" /root/casper/ipmini
 
@@ -200,7 +200,7 @@ USERGIT=$(cat /etc/github/username)
 hhari3=$(date -d "999 days" +"%Y-%m-%d")
 mkdir /root/rmbl
 cd /root/rmbl
-wget https://raw.githubusercontent.com/RMBL-VPN/permission/main/ipmini >/dev/null 2>&1
+wget https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini >/dev/null 2>&1
 
 sed -i "/# RESELLER/a ### ${author3} ${hhari3} ${MYIP3} ON 999" /root/casper/ipmini
 
@@ -230,7 +230,7 @@ USERGIT=$(cat /etc/github/username)
 hhari=$(date -d "$KEY2 days" +"%Y-%m-%d")
 mkdir /root/rmbl
 cd /root/rmbl
-wget https://raw.githubusercontent.com/RMBL-VPN/permission/main/ipmini >/dev/null 2>&1
+wget https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini >/dev/null 2>&1
 if [ "$ADMIN" = "ON" ]; then
 sed -i "/# RESELLER/a ### ${author} ${hhari} ${MYIP} ${ADMIN} ${TOTALIP}" /root/casper/ipmini
 else
@@ -251,7 +251,7 @@ sleep 0.5
 rm ipmini
 wget https://raw.githubusercontent.com/RMBL-VPN/license/main/key >/dev/null 2>&1
 if [ "$ADMIN" = "ON" ]; then
-sed -i "/^### $LIST $Key $KEY2 $ADMIN $TOTALIP/d" /root/casper/key
+sed -i "/^### $LIST $Key $KEY2 $ADMIN $TOTALIP/d" /root/rmbl/key
 else
 sed -i "/^### $LIST $Key $KEY2/d" /root/rmbl/key
 fi
@@ -303,15 +303,15 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-wget https://raw.githubusercontent.com/RMBL-VPN/v/main/install/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
 clear
 }
 res2() {
-wget https://raw.githubusercontent.com/RMBL-VPN/v/main/install/rmbl1.sh && chmod +x rmbl1.sh && ./rmbl1.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/rmbl1.sh && chmod +x rmbl1.sh && ./rmbl1.sh
 clear
 }
 res3() {
-wget https://raw.githubusercontent.com/RMBL-VPN/v/main/install/rmbl2.sh && chmod +x rmbl2.sh && ./rmbl2.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/rmbl2.sh && chmod +x rmbl2.sh && ./rmbl2.sh
 clear
 }
 
@@ -368,7 +368,7 @@ echo -e "${tyblue}┌───────────────────�
 echo -e "${tyblue}│ \033[1;37mPlease select a your Choice to Set Domain${tyblue}│${NC}"
 echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
 echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "${tyblue}│  [ 1 ]  \033[1;37mDomain xxx.vipvpn       ${NC}"
+echo -e "${tyblue}│  [ 1 ]  \033[1;37mDomain xxx.ddddd       ${NC}"
 echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
 until [[ $domain2 =~ ^[1-1]+$ ]]; do 
 read -p "   Please select numbers 1 sampai 1 : " domain2
@@ -584,7 +584,7 @@ cd
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 clear
-wget https://raw.githubusercontent.com/RMBL-VPN/v/main/tools.sh &> /dev/null
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/tools.sh &> /dev/null
 chmod +x tools.sh 
 bash tools.sh
 clear
@@ -623,42 +623,42 @@ fun_bar() {
 
 
 res2() {
-wget https://raw.githubusercontent.com/RMBL-VPN/v/main/install/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 clear
 } 
 
 res3() {
-wget https://raw.githubusercontent.com/RMBL-VPN/v/main/install/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 clear
 }
 
 res4() {
-wget https://raw.githubusercontent.com/RMBL-VPN/v/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
 }
 
 res5() {
-wget https://raw.githubusercontent.com/RMBL-VPN/v/main/install/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 clear
 }
 
 res6() {
-wget https://raw.githubusercontent.com/RMBL-VPN/v/main/sshws/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/sshws/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 clear
 }
 
 res7() {
-wget https://raw.githubusercontent.com/RMBL-VPN/v/main/menu/update.sh && chmod +x update.sh && ./update.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/menu/update.sh && chmod +x update.sh && ./update.sh
 clear
 }
 
 res8() {
-wget https://raw.githubusercontent.com/RMBL-VPN/v/main/slowdns/installsl.sh && chmod +x installsl.sh && bash installsl.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/slowdns/installsl.sh && chmod +x installsl.sh && bash installsl.sh
 clear
 }
 
 res9() {
-wget https://raw.githubusercontent.com/RMBL-VPN/v/main/install/udp-custom.sh && chmod +x udp-custom.sh && bash udp-custom.sh
+wget https://raw.githubusercontent.com/RMBLsukarata/vip/main/install/udp-custom.sh && chmod +x udp-custom.sh && bash udp-custom.sh
 clear
 }
 
@@ -717,7 +717,7 @@ TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
 MODEL2=$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IZIN=$(curl -sS https://raw.githubusercontent.com/RMBL-VPN/permission/main/ipmini | grep $MYIP | awk '{print $3}' )
+IZIN=$(curl -sS https://raw.githubusercontent.com/RMBLsukarata/permission/main/ipmini | grep $MYIP | awk '{print $3}' )
 d1=$(date -d "$IZIN" +%s)
 d2=$(date -d "$today" +%s)
 EXP=$(( (d1 - d2) / 86400 ))
@@ -764,7 +764,7 @@ if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
 fi
 history -c
-serverV=$( curl -sS https://raw.githubusercontent.com/RMBL-VPN/v/main/versi  )
+serverV=$( curl -sS https://raw.githubusercontent.com/RMBLsukarata/vip/main/versi  )
 echo $serverV > /opt/.ver
 aureb=$(cat /home/re_otm)
 b=11
